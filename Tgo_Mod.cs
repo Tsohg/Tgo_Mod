@@ -47,6 +47,8 @@ namespace Tgo_Mod
         public void TgoMute(string playerName, CommandArgs args)
         {
             TSPlayer tplr = GetTSPlayerByName(playerName);
+            if (tplr == null)
+                return;
             tplr.mute = !tplr.mute;
 
             //Player has been muted/unmuted so we collect data...
@@ -56,6 +58,8 @@ namespace Tgo_Mod
         public void TgoKick(string playerName, string reason, CommandArgs args)
         {
             TSPlayer tplr = GetTSPlayerByName(playerName);
+            if (tplr == null)
+                return;
             TShock.Utils.Kick(tplr, reason);
 
             //Player has been kicked so we collect our data...
@@ -65,6 +69,8 @@ namespace Tgo_Mod
         public void TgoBan(string playerName, string reason, CommandArgs args)
         {
             TSPlayer tplr = GetTSPlayerByName(playerName);
+            if (tplr == null)
+                return;
             TShock.Utils.Ban(tplr, reason);
 
             //Player has been banned so we collect our data...
@@ -76,7 +82,7 @@ namespace Tgo_Mod
             foreach (TSPlayer plr in TShock.Players)
                 if (plr.Name == name)
                     return plr;
-            throw new Exception("Null TSPlayer.");
+            return null;
         }
     }
 }
