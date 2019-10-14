@@ -1,0 +1,15 @@
+C:\Users\Nathan\source\repos\Tgo_Mod\Tgo_Mod\obj\Debug\Tgo_Mod.csprojAssemblyReference.cache
+C:\Users\Nathan\source\repos\Tgo_Mod\Tgo_Mod\obj\Debug\Tgo_Mod.csproj.CoreCompileInputs.cache
+C:\Users\Nathan\source\repos\Tgo_Mod\Tgo_Mod\bin\Debug\Tgo_Mod.dll
+C:\Users\Nathan\source\repos\Tgo_Mod\Tgo_Mod\bin\Debug\Tgo_Mod.pdb
+C:\Users\Nathan\source\repos\Tgo_Mod\Tgo_Mod\bin\Debug\OTAPI.dll
+C:\Users\Nathan\source\repos\Tgo_Mod\Tgo_Mod\bin\Debug\TerrariaServer.exe
+C:\Users\Nathan\source\repos\Tgo_Mod\Tgo_Mod\bin\Debug\TShockAPI.dll
+C:\Users\Nathan\source\repos\Tgo_Mod\Tgo_Mod\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Nathan\source\repos\Tgo_Mod\Tgo_Mod\bin\Debug\HttpServer.dll
+C:\Users\Nathan\source\repos\Tgo_Mod\Tgo_Mod\bin\Debug\MySql.Data.dll
+C:\Users\Nathan\source\repos\Tgo_Mod\Tgo_Mod\bin\Debug\BCrypt.Net.dll
+C:\Users\Nathan\source\repos\Tgo_Mod\Tgo_Mod\bin\Debug\Mono.Data.Sqlite.dll
+C:\Users\Nathan\source\repos\Tgo_Mod\Tgo_Mod\obj\Debug\Tgo_Mod.csproj.CopyComplete
+C:\Users\Nathan\source\repos\Tgo_Mod\Tgo_Mod\obj\Debug\Tgo_Mod.dll
+C:\Users\Nathan\source\repos\Tgo_Mod\Tgo_Mod\obj\Debug\Tgo_Mod.pdb

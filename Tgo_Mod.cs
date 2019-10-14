@@ -85,4 +85,24 @@ namespace Tgo_Mod
             return null;
         }
     }
+
+    //internal class Tgo_Mod_Data
+    //{
+    //    private string iP1;
+    //    private string name1;
+    //    private string iP2;
+    //    private string name2;
+    //    private TGOCType mute;
+    //    private DateTime now;
+
+    //    public Tgo_Mod_Data(string iP1, string name1, string iP2, string name2, TGOCType mute, DateTime now)
+    //    {
+    //        this.iP1 = iP1;
+    //        this.name1 = name1;
+    //        this.iP2 = iP2;
+    //        this.name2 = name2;
+    //        this.mute = mute;
+    //        this.now = now;
+    //    }
+    //}
 }
