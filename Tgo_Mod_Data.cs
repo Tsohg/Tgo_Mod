@@ -8,12 +8,12 @@ namespace Tgo_Mod
 {
     class Tgo_Mod_Data
     {
-        string uIP { get; } //IP of command user
-        string uName { get; } //Name of the command user
-        string tIP { get; } //IP of the Target of the command
-        string tName { get; } //Name of the target of the command
-        TGOCType type { get; } //Type of command used
-        DateTime timeStamp { get; } //Time of command execution
+        public string uIP { get; } //IP of command user
+        public string uName { get; } //Name of the command user
+        public string tIP { get; } //IP of the Target of the command
+        public string tName { get; } //Name of the target of the command
+        public TGOCType type { get; } //Type of command used
+        public DateTime timeStamp { get; } //Time of command execution
 
         public Tgo_Mod_Data(string uIP, string uName, string tIP, string tName, TGOCType type, DateTime timeStamp)
         {
