@@ -56,6 +56,9 @@ namespace Tgo_Mod
                     "DATABASE=" + db + ";" +
                     "UID=" + uid + ";" +
                     "PASSWORD=" + pass + ";");
+                Commands.ChatCommands.Add(new Command("tshock.rest.mute", TgoMute, "TgoMute", "tmute"));
+                Commands.ChatCommands.Add(new Command("tshock.rest.kick", TgoKick, "TgoKick", "tkick"));
+                Commands.ChatCommands.Add(new Command("tshock.rest.ban", TgoBan, "TgoBan", "tban"));
             }
             catch (Exception e)
             {
@@ -80,39 +83,45 @@ namespace Tgo_Mod
         /// It is a toggle. Muting same player twice unmutes.
         /// </summary>
         /// <param name="playerName"></param>
-        public void TgoMute(string playerName, CommandArgs args)
+        public void TgoMute(CommandArgs args)
         {
-            TSPlayer tplr = GetTSPlayerByName(playerName);
-            if (tplr == null)
+            TSPlayer plr = GetTSPlayerByName(args.Parameters[1]);
+            if (plr == null)
                 return;
-            tplr.mute = !tplr.mute;
-
+            plr.mute = !plr.mute;
+            TShock.Log.ConsoleError("" + plr.Name + " :: " + args.Parameters[2]);
             //Player has been muted/unmuted so we collect data...
-            Tgo_Mod_Data data = new Tgo_Mod_Data(args.Player.IP, args.Player.Name, tplr.IP, tplr.Name, TGOCType.mute, DateTime.Now);
+            Tgo_Mod_Data data = new Tgo_Mod_Data(args.Player.IP, args.Player.Name, plr.IP, plr.Name, TGOCType.mute, DateTime.Now);
             InsertTgoModData(data);
         }
 
-        public void TgoKick(string playerName, string reason, CommandArgs args)
+        public void TgoKick(CommandArgs args)
         {
-            TSPlayer tplr = GetTSPlayerByName(playerName);
-            if (tplr == null)
+            TSPlayer plr = GetTSPlayerByName(args.Parameters[1]);
+            if (plr == null)
+            {
+                TShock.Log.ConsoleError("Null TSPlayer in Tgo_Mod");
                 return;
-            TShock.Utils.Kick(tplr, reason);
-
+            }
+            TShock.Utils.Kick(plr, args.Parameters[2]);
+            TShock.Log.ConsoleError("" + plr.Name + " :: " + args.Parameters[2]);
             //Player has been kicked so we collect our data...
-            Tgo_Mod_Data data = new Tgo_Mod_Data(args.Player.IP, args.Player.Name, tplr.IP, tplr.Name, TGOCType.kick, DateTime.Now);
+            Tgo_Mod_Data data = new Tgo_Mod_Data(args.Player.IP, args.Player.Name, plr.IP, plr.Name, TGOCType.kick, DateTime.Now);
             InsertTgoModData(data);
         }
 
-        public void TgoBan(string playerName, string reason, CommandArgs args)
+        public void TgoBan(CommandArgs args)
         {
-            TSPlayer tplr = GetTSPlayerByName(playerName);
-            if (tplr == null)
+            TSPlayer plr = GetTSPlayerByName(args.Parameters[1]);
+            if (plr == null)
+            {
+                TShock.Log.ConsoleError("Null TSPlayer in Tgo_Mod");
                 return;
-            TShock.Utils.Ban(tplr, reason);
-
+            }
+            TShock.Utils.Kick(plr, args.Parameters[2]);
+            TShock.Log.ConsoleError("" + plr.Name + " :: " + args.Parameters[2]);
             //Player has been banned so we collect our data...
-            Tgo_Mod_Data data = new Tgo_Mod_Data(args.Player.IP, args.Player.Name, tplr.IP, tplr.Name, TGOCType.ban, DateTime.Now);
+            Tgo_Mod_Data data = new Tgo_Mod_Data(args.Player.IP, args.Player.Name, plr.IP, plr.Name, TGOCType.ban, DateTime.Now);
             InsertTgoModData(data);
         }
 
